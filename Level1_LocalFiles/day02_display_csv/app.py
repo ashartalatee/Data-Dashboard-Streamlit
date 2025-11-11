@@ -2,9 +2,7 @@ import streamlit as st
 import pandas as pd
 import io
 
-# ======================================================
 # 🧠 SMART CSV LOADER (Universal + Clean)
-# ======================================================
 def load_csv_safely(file):
     """Membaca CSV apapun dengan aman, auto-handle encoding, kutipan rusak, dan pembersihan kolom."""
     try:
@@ -32,9 +30,7 @@ def load_csv_safely(file):
     return df
 
 
-# ======================================================
 # 🎨 STREAMLIT DASHBOARD UI
-# ======================================================
 st.set_page_config(page_title="Smart CSV Dashboard v2", layout="wide")
 
 st.title("📊 Smart CSV Dashboard v2 — Universal + Clean Edition")
@@ -49,9 +45,8 @@ Unggah file CSV **apa pun**, dashboard ini akan otomatis:
 
 uploaded_file = st.file_uploader("📂 Upload file CSV Anda", type="csv")
 
-# ======================================================
+
 # 🚀 MAIN LOGIC
-# ======================================================
 if uploaded_file is not None:
     try:
         df = load_csv_safely(uploaded_file)
@@ -91,9 +86,8 @@ if uploaded_file is not None:
 else:
     st.info("⬆️ Silakan upload file CSV untuk mulai analisis.")
 
-# ======================================================
+
 # 🧾 FOOTER
-# ======================================================
 st.markdown("""
 ---
 ### ✅ Tips Agar Dashboard Berjalan Optimal
